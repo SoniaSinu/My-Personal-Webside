@@ -1,0 +1,29 @@
+backend:
+  name: github
+  repo: SoniaSinu/SoniaSinu.github.io # Make sure this matches your exact repo name!
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+# Secures the login so only you have access
+local_backend: false
+
+collections:
+  - name: "achievements_data"
+    label: "My Achievements"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - file: "achievements.json"
+        label: "Achievements List"
+        name: "achievements_list"
+        fields:
+          - label: "Achievements & Activities"
+            name: "achievements"
+            widget: "list"
+            fields:
+              - { label: "Title / Achievement Name", name: "title", widget: "string" }
+              - { label: "Date achieved", name: "date", widget: "string" }
+              - { label: "Short Description", name: "description", widget: "text" }
